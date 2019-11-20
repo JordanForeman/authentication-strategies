@@ -1,0 +1,21 @@
+{
+    "command": {
+        "publish": {
+            "ignoreChanges": [
+                "lerna.json"
+            ],
+            "message": "chore(publish): version release [skip ci]",
+            "conventionalCommits": true
+        }
+    },
+    "packages": [
+        "packages/*"
+    ],
+    "changelog": {
+        "labels": {
+            "feature": "New Feature",
+            "bug": "Bug Fix"
+        }
+    },
+    "version": "independent"
+}
