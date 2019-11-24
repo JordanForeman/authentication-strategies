@@ -30,6 +30,7 @@ jobs:
           git fetch origin
           git config --global user.email "me@jordanforeman.com"
           git config --global user.name "Jordan Foreman"
+          git branch --set-upstream-to=origin/master master
       - name: Authenticate with NPM
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
       - name: Use Node.js
