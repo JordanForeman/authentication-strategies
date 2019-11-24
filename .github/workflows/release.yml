@@ -24,10 +24,10 @@ jobs:
         uses: dcodeIO/setup-node-nvm@master
       - name: Install Node Dependencies
         run: npm ci
-      - name: Verify Code Quality
-        run: npm run verify
       - name: Prepare Packages
         run: npx lerna bootstrap
+      - name: Verify Code Quality
+        run: npm run verify
       - name: Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
