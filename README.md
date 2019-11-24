@@ -4,8 +4,4 @@ Lerna module controlling authentication strategies for use with [`@jordanforeman
 
 ## Available Authentication Strategies
 
-### `@jordanforeman/jwt-authentication`
-
-```js
-// TODO
-```
+* [`@jordanforeman/jwt-authentication`](https://github.com/JordanForeman/authentication-strategies/blob/master/packages/jwt-authentication/README.md)
