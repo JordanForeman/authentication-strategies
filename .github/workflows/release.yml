@@ -1,0 +1,40 @@
+name: Semantic Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  verify-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v1
+      - name: Prepare repository
+        run: git checkout "${GITHUB_REF:11}"
+      - name: Configure Git
+        run: |
+          git remote rm origin
+          git remote add origin "https://jordanforeman:${{ secrets.GH_TOKEN }}@github.com/JordanForeman/config.git"
+          git fetch origin
+          git config --global user.email "me@jordanforeman.com"
+          git config --global user.name "Jordan Foreman"
+      - name: Authenticate with NPM
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+      - name: Use Node.js
+        uses: dcodeIO/setup-node-nvm@master
+      - name: Install Node Dependencies
+        run: npm ci
+      - name: Verify Code Quality
+        run: npm run verify
+      - name: Prepare Packages
+        run: npx lerna bootstrap
+      - name: Semantic Release
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_EMAIL: me@jordanforeman.com
+          NPM_CONFIG_USERNAME: jordanforeman
+          RELEASE_GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          RELEASE_GH_USERNAME: jordanforeman
+          HUSKY_SKIP_HOOKS: 1
+        run: npx lerna publish --yes

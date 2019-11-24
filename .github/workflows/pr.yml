@@ -1,0 +1,14 @@
+name: PR Verify
+on: [pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: dcodeIO/setup-node-nvm@master
+      - name: Install Node Dependencies
+        run: npm ci
+      - name: Verify Code Quality
+        run: npm run verify
