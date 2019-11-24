@@ -10,21 +10,17 @@
     "url": "https://github.com/JordanForeman/authentication-strategies/issues"
   },
   "scripts": {
-    "lint": "eslint 'packages/jwt-authentication/src/**/*.js' 'packages/jwt-authentication/test/**/*.js'",
-    "test": "mocha 'packages/jwt-authentication/test/**/*.js'",
-    "verify": "npm run lint && npm run test"
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "verify": "lerna run verify"
   },
   "homepage": "https://github.com/JordanForeman/authentication-strategies#readme",
   "devDependencies": {
-    "@commitlint/cli": "8.2.0",
-    "@commitlint/config-conventional": "8.2.0",
     "@jordanforeman/commitlint-config": "^0.2.1",
-    "@jordanforeman/eslint-config": "^0.2.2",
     "@jordanforeman/release-config": "^0.2.1",
     "@jordanforeman/renovate-config": "^0.2.1",
     "cz-conventional-changelog": "^3.0.2",
     "husky": "^3.1.0",
-    "lerna": "^3.18.4",
-    "mocha": "^6.2.2"
+    "lerna": "^3.18.4"
   }
 }

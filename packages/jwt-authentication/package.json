@@ -4,13 +4,16 @@
   "description": "An authentication strategy for @jordanforeman/api-framework",
   "main": "index.js",
   "files": [
-    "./index.js",
-    "./src",
-    "./lib"
+    "/index.js",
+    "/src",
+    "/lib"
   ],
   "scripts": {
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src test",
     "prepublish": "npm run build",
-    "test": "mocha test"
+    "test": "mocha test/**/*.js",
+    "verify": "npm run lint && npm run test"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,9 @@
   },
   "devDependencies": {
     "@jordanforeman/babel-config": "^0.1.0",
-    "mocha": "^6.2.2"
+    "@jordanforeman/eslint-config": "^0.2.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
   }
 }
