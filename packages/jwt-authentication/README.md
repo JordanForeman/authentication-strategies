@@ -1,5 +1,8 @@
 # `@jordanforeman/jwt-authentication`
 
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+
 An authentication strategy middleware for accessing APIs via [JsonWebTokens](https://jwt.io/) using [`@jordanforeman/api-framework`](https://github.com/jordanforeman/api-framework)
 
 ## Installation
