@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/JordanForeman/authentication-strategies#readme",
   "devDependencies": {
-    "@jordanforeman/commitlint-config": "0.2.1",
+    "@jordanforeman/commitlint-config": "0.2.2",
     "@jordanforeman/release-config": "0.2.1",
     "@jordanforeman/renovate-config": "0.2.1",
     "cz-conventional-changelog": "3.0.2",
