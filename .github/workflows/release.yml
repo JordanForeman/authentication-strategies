@@ -37,8 +37,6 @@ jobs:
         uses: dcodeIO/setup-node-nvm@master
       - name: Install Node Dependencies
         run: npm ci
-      - name: Force Sync
-        run: git pull
       - name: Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
