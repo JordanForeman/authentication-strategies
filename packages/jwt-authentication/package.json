@@ -24,9 +24,13 @@
   "dependencies": {
     "jsonwebtoken": "8.5.1"
   },
+  "peerDependencies": {
+    "@jordanforeman/rest-exceptions": "*"
+  },
   "devDependencies": {
     "@jordanforeman/babel-config": "0.1.1",
     "@jordanforeman/eslint-config": "0.2.4",
+    "@jordanforeman/rest-exceptions": "1.0.2",
     "chai": "4.2.0",
     "mocha": "6.2.2",
     "sinon": "7.5.0"

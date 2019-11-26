@@ -1,10 +1,9 @@
 import jsonwebtoken from 'jsonwebtoken';
 import sinon from 'sinon';
+import { ForbiddenException } from '@jordanforeman/rest-exceptions';
 import { expect } from 'chai';
 
 import { jwt } from '../../src/jwt';
-
-const FORBIDDEN = 403;
 
 describe('Basic JWT Authentication', () => {
     let token,
@@ -67,10 +66,16 @@ describe('Basic JWT Authentication', () => {
     });
 
     describe('Bad JWT', () => {
+        let resultingError;
+
         beforeEach(async () => {
             jsonwebtoken.verify.rejects();
 
-            await authStrategy(request, response, next);
+            try {
+                await authStrategy(request, response, next);
+            } catch (e) {
+                resultingError = e;
+            }
         });
 
         it('should attempt to verify the jwt', () => {
@@ -82,13 +87,8 @@ describe('Basic JWT Authentication', () => {
             expect(next.callCount).to.equal(0);
         });
 
-        it('should return an unauthorized error + message', () => {
-            expect(response.status.callCount).to.equal(1);
-            expect(response.status.firstCall.args).to.deep.equal([FORBIDDEN]);
-            expect(response.json.callCount).to.equal(1);
-            expect(response.json.firstCall.args).to.deep.equal([{
-                message: 'Must be authorized to view this resource'
-            }]);
+        it('should throw a forbidden', () => {
+            expect(resultingError).to.be.instanceOf(ForbiddenException);
         });
     });
 });

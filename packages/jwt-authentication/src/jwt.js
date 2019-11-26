@@ -1,6 +1,5 @@
 import { verify } from 'jsonwebtoken';
-
-const FORBIDDEN = 403;
+import { ForbiddenException } from '@jordanforeman/rest-exceptions';
 
 export const jwt = (secretOrPublicKey, options) => async (request, response, next) => {
     const token = request.headers['x-access-token'];
@@ -10,7 +9,6 @@ export const jwt = (secretOrPublicKey, options) => async (request, response, nex
 
         next();
     } catch (e) {
-        response.status(FORBIDDEN);
-        response.json({ message: 'Must be authorized to view this resource' });
+        throw new ForbiddenException();
     }
 };
