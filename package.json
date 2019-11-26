@@ -18,7 +18,7 @@
   "devDependencies": {
     "@jordanforeman/commitlint-config": "0.2.2",
     "@jordanforeman/release-config": "0.2.2",
-    "@jordanforeman/renovate-config": "0.2.2",
+    "@jordanforeman/renovate-config": "0.2.3",
     "cz-conventional-changelog": "3.0.2",
     "husky": "3.1.0",
     "lerna": "3.19.0"
