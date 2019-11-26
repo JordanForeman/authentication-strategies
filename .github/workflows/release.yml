@@ -37,6 +37,8 @@ jobs:
         uses: dcodeIO/setup-node-nvm@master
       - name: Install Node Dependencies
         run: npm ci
+      - name: Prepare Packages
+        run: npx lerna bootstrap --ci
       - name: Semantic Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
