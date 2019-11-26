@@ -12,7 +12,7 @@ jobs:
       - name: Install Node Dependencies
         run: npm ci
       - name: Prepare Packages
-        run: npx lerna bootstrap
+        run: npx lerna bootstrap --ci
       - name: Verify Code Quality
         run: npm run verify
   release:
