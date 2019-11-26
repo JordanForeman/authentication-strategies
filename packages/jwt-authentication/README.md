@@ -11,7 +11,7 @@ An authentication strategy middleware for accessing APIs via [JsonWebTokens](htt
 ## Installation
 
 ```bash
-$ npm i --save @jordanforeman/{api-framework,jwt-authentication} --save-exact
+$ npm i --save @jordanforeman/{api-framework,rest-exceptions,jwt-authentication} --save-exact
 ```
 
 ## Usage
