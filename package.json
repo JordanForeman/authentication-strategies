@@ -21,6 +21,6 @@
     "@jordanforeman/renovate-config": "0.2.3",
     "cz-conventional-changelog": "3.2.0",
     "husky": "3.1.0",
-    "lerna": "3.21.0"
+    "lerna": "3.22.0"
   }
 }
