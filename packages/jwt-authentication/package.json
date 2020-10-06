@@ -1,6 +1,6 @@
 {
   "name": "@jordanforeman/jwt-authentication",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "An authentication strategy for @jordanforeman/api-framework",
   "main": "index.js",
   "files": [
