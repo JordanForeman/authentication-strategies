@@ -31,7 +31,7 @@
     "@jordanforeman/babel-config": "0.1.1",
     "@jordanforeman/eslint-config": "0.2.6",
     "@jordanforeman/rest-exceptions": "1.1.0",
-    "chai": "4.2.0",
+    "chai": "6.2.2",
     "mocha": "6.2.3",
     "sinon": "9.2.1"
   },
